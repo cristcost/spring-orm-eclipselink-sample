@@ -1,6 +1,8 @@
-*.class
+/target/
+/.settings/
+/.checkstyle
+/.classpath
+/.pmd
+/.pmdruleset
+/.project
 
-# Package Files #
-*.jar
-*.war
-*.ear
