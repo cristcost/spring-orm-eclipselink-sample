@@ -1,0 +1,1 @@
+- Fragment Bundle to extend Spring JDCB to find MySQL driver -
