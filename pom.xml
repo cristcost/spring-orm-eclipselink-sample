@@ -31,6 +31,7 @@
 	<modules>
 		<module>main-example</module>
 		<module>mysql-fragment</module>
+		<module>features</module>
 	</modules>
 
 	<properties>
@@ -54,8 +55,10 @@
 		<spring.version>3.0.7.RELEASE</spring.version>
 
 		<!-- plugins versions -->
+		<build-helper.plugin.version>1.8</build-helper.plugin.version>
 		<bundle.plugin.version>2.3.7</bundle.plugin.version>
 		<compiler.plugin.version>3.1</compiler.plugin.version>
+		<features.plugin.version>2.2.11</features.plugin.version>
 	</properties>
 
 	<build>
