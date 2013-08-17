@@ -100,10 +100,20 @@ The two following points are still unclear for me: I welcome your feedback on se
 ). 
 
 ### Eclipselink Weaving
-The best way to use the weaver at load time need to be investigated.
+I'm investigating the best way to use weaving for JPA.
 
-One alternative approach is to disable dinamic weaving and have weaving of entities at build time
+My preferred approach is to disable dynamic weaving and have weaving of entities at build time
 (see http://bit.ly/1bqX6cj and http://bit.ly/RiNYyG) or disable weaving at all.
+
+Please note that the right options to disable load time weaving in eclipselink is 
+`<property name="eclipselink.weaving" value="false"/>`.
+
+
+Eclipselink documentation reports that the options for disable 
+weaving is `<property name="eclipse.weaving" value="false"/>`: this is wrong and had me waste time
+to find the issue in Spring's property `loadTimeWeaver` of 
+class `org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean`.
+
 
 ### MySQL Driver in Spring-JDBC
 Spring-ORM is based on Spring-JDBC that in osgi is able to find most famous database drivers as the bundle 
@@ -115,5 +125,9 @@ which is currently used in servicemix 4.5.2.
 
 To fix it, this demo include a project of a specific framgment bundle (project mysql-fragment) 
 that extends the spring-jdbc bundle to import the MySQL driver. 
+
+UPDATE: I've checked the MANIFEST.MF of spring-jdbc latest version (3.2.4-RELEASE), to verify if MySQL was added 
+to the list of supported drivers, but I've found that this version (downloaded from Maven Central Repo)
+is not even an OSGi bundle.
 
 
