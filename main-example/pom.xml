@@ -95,31 +95,19 @@
 			<version>${junit.version}</version>
 			<scope>test</scope>
 		</dependency>
-
 	</dependencies>
 
 	<build>
 		<plugins>
-<!-- 			<plugin> -->
-<!-- 				<artifactId>maven-antrun-plugin</artifactId> -->
-<!-- 				<executions> -->
-<!-- 					<execution> -->
-<!-- 						<phase>process-classes</phase> -->
-<!-- 						<configuration> -->
-<!-- 							<tasks> -->
-<!-- 								<java classname="org.eclipse.persistence.tools.weaving.jpa.StaticWeave" -->
-<!-- 									classpathref="maven.runtime.classpath" fork="true"> -->
-<!-- 									<arg -->
-<!-- 										line="-loglevel FINE -persistenceinfo src/main/resources target/classes target/classes" /> -->
-<!-- 								</java> -->
-<!-- 							</tasks> -->
-<!-- 						</configuration> -->
-<!-- 						<goals> -->
-<!-- 							<goal>run</goal> -->
-<!-- 						</goals> -->
-<!-- 					</execution> -->
-<!-- 				</executions> -->
-<!-- 			</plugin> -->
+			<!-- Configuration to execute static weaving using the plugin <plugin> 
+				<artifactId>eclipselink-staticweave-maven-plugin</artifactId> <groupId>au.com.alderaan</groupId> 
+				<version>1.0.4</version> <executions> <execution> <goals> <goal>weave</goal> 
+				</goals> <phase>process-classes</phase> <configuration> <logLevel>ALL</logLevel> 
+				<includeProjectClasspath>true</includeProjectClasspath> </configuration> 
+				</execution> </executions> <dependencies> <dependency> <groupId>org.eclipse.persistence</groupId> 
+				<artifactId>eclipselink</artifactId> <version>${eclipselink.version}</version> 
+				</dependency> </dependencies> </plugin> -->
+
 			<plugin>
 				<groupId>org.apache.felix</groupId>
 				<artifactId>maven-bundle-plugin</artifactId>
@@ -141,6 +129,5 @@
 			</plugin>
 		</plugins>
 	</build>
-
 </project>
 

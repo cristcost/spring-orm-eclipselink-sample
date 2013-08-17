@@ -54,7 +54,7 @@
 				<prop key="eclipselink.ddl-generation">create-tables</prop>
 				<prop key="eclipselink.ddl-generation.output-mode">database</prop>
 				<prop key="eclipselink.logging.level">INFO</prop>
-				<!-- <prop key="eclipse.weaving">false</prop> -->
+				<!-- <prop key="eclipselink.weaving">static</prop> -->
 				<prop key="eclipselink.weaving">false</prop>
 			</props>
 		</property>
