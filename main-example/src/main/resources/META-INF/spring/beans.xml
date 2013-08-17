@@ -40,9 +40,9 @@
 		class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean">
 		<property name="dataSource" ref="mysqlDataSource" />
 		<property name="persistenceUnitName" value="test-generic" />
-		<property name="loadTimeWeaver">
-			<bean class="net.cristcost.test.jpa.TestWeaver" />
-		</property>
+		<!-- <property name="loadTimeWeaver"> -->
+		<!-- <bean class="net.cristcost.test.jpa.TestWeaver" /> -->
+		<!-- </property> -->
 		<property name="jpaVendorAdapter">
 			<bean
 				class="org.springframework.orm.jpa.vendor.EclipseLinkJpaVendorAdapter">
@@ -54,6 +54,8 @@
 				<prop key="eclipselink.ddl-generation">create-tables</prop>
 				<prop key="eclipselink.ddl-generation.output-mode">database</prop>
 				<prop key="eclipselink.logging.level">INFO</prop>
+				<!-- <prop key="eclipse.weaving">false</prop> -->
+				<prop key="eclipselink.weaving">false</prop>
 			</props>
 		</property>
 	</bean>
