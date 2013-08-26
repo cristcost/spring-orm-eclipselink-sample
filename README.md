@@ -115,7 +115,8 @@ to find the issue in Spring's property `loadTimeWeaver` of
 class `org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean`.
 
 
-### MySQL Driver in Spring-JDBC
+### JDBC Drivers in Spring-JDBC
+#### MySQL
 Spring-ORM is based on Spring-JDBC that in osgi is able to find most famous database drivers as the bundle 
 is preconfigured with optional imports. 
 
@@ -130,4 +131,22 @@ UPDATE: I've checked the MANIFEST.MF of spring-jdbc latest version (3.2.4-RELEAS
 to the list of supported drivers, but I've found that this version (downloaded from Maven Central Repo)
 is not even an OSGi bundle.
 
+#### HSQLDB
+Spring-JDBC only supports HSQLDB prior to version 2.0, so after updating to the last version (2.2.9) it stops working.
+A framgent is required also for HSQLDB if latest version is to be used.
+
+#### Alternative using common-dbcp
+It is possible to use Apache Commons DBCP instead of Spring-JDBC to create a data source. 
+
+In servicemix, use the dependency:
+
+```
+<dependency>
+    <groupId>org.apache.servicemix.bundles</groupId>
+    <artifactId>org.apache.servicemix.bundles.commons-dbcp</artifactId>
+    <version>1.4_3</version>
+</dependency>
+```
+
+TODO: add code sample
 
